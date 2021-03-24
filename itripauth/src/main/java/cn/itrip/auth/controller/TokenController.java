@@ -28,6 +28,11 @@ public class TokenController {
 	@Resource
 	private TokenService tokenService;
 
+	/**
+	 * 注销
+	 * @param request
+	 * @return
+	 */
 	@RequestMapping(value = "/validateToken",method =RequestMethod.GET, produces = "application/json",headers = "token")
 	public @ResponseBody
 	Dto validate(HttpServletRequest request) {
@@ -42,7 +47,6 @@ public class TokenController {
 			e.printStackTrace();
 			return DtoUtil.returnFail(e.getMessage(), ErrorCode.AUTH_UNKNOWN);
 		}
-
 	}
 	/**
 	 * 置换token
@@ -63,7 +67,6 @@ public class TokenController {
 			e.printStackTrace();
 			return DtoUtil.returnFail(e.getMessage(),ErrorCode.AUTH_UNKNOWN);
 		}
-
 	}
 }
 
