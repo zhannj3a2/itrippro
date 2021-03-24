@@ -78,7 +78,7 @@ public class UserController {
 				} else {
 					//2.调用业务层createUser
 					itripUser.setUserPassword(MD5.getMd5(userVO.getUserPassword(), 32));
-					userService.itriptxCreateUser(itripUser);
+					userService.itriptxCreateUserByPhone(itripUser);
 					return DtoUtil.returnSuccess();
 				}
 			} catch (Exception e) {
@@ -113,7 +113,7 @@ public class UserController {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-			return DtoUtil.returnFail(e.getMessage(),ErrorCode.AUTH_UNKNOWN);
+			return DtoUtil.returnFail("激活失败",ErrorCode.AUTH_UNKNOWN);
 		}
 	} 
 	
@@ -121,8 +121,18 @@ public class UserController {
 	@RequestMapping(value="/validatephone",method=RequestMethod.PUT,produces= "application/json")
 	public @ResponseBody Dto validatePhone(			
 			@RequestParam String user,			
-			@RequestParam String code){			
-			return null;
+			@RequestParam String code){
+		try {
+			if(userService.activatePhone(user,code)){
+				return DtoUtil.returnSuccess("验证成功");
+			}
+			else{
+				return DtoUtil.returnSuccess("验证失败");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			return DtoUtil.returnFail("验证失败",ErrorCode.AUTH_UNKNOWN);
+		}
 	} 
 	
 	

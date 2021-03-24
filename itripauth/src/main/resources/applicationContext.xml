@@ -90,7 +90,6 @@
 	<bean id="redisAPI" class="cn.itrip.common.RedisAPI">
 		<property name="jedisPool" ref="jedisPool"/>
 	</bean>
-
 	<bean id="validationToken" class="cn.itrip.common.ValidationToken">
 		<property name="redisAPI" ref="redisAPI" />
 	</bean>

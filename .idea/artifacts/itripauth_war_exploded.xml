@@ -23,6 +23,7 @@
           <element id="library" level="project" name="Maven: javax.activation:activation:1.1" />
           <element id="library" level="project" name="Maven: cn.itrip:itrip-jregex:1.2_01" />
           <element id="library" level="project" name="Maven: cn.itrip.ccprestsms:itrip-ccprestsms:1.0" />
+          <element id="library" level="project" name="Maven: nl.bitwalker:UserAgentUtils:1.2.4" />
           <element id="library" level="project" name="Maven: org.hibernate:hibernate-validator:5.2.4.Final" />
           <element id="library" level="project" name="Maven: javax.validation:validation-api:1.1.0.Final" />
           <element id="library" level="project" name="Maven: org.jboss.logging:jboss-logging:3.2.1.Final" />

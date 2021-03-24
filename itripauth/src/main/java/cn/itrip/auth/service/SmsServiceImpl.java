@@ -1,9 +1,10 @@
 package cn.itrip.auth.service;
 
 import com.cloopen.rest.sdk.CCPRestSmsSDK;
+import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
-
+@Service("smsService")
 public class SmsServiceImpl implements SmsService {
     @Override
     public void send(String To, String templateId, String[] datas) throws Exception {

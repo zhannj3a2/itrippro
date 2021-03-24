@@ -16,7 +16,7 @@
 		<property name="protocol" value="smtp" />
 		<property name="defaultEncoding" value="utf-8" />
 		<property name="username" value="2524657524@qq.com" />
-		<property name="password" value="授权码" />
+		<property name="password" value="rsujlalnnfihebjf" />
 		<property name="javaMailProperties">
 			<props>
 				<!-- 设置SMTP服务器需要用户验证 -->

@@ -62,6 +62,19 @@ public class UserServiceImpl implements  UserService {
         }
         return false;
     }
+
+    @Override
+    public ItripUser login(String userCode, String userPassword) throws Exception {
+        ItripUser itripUser = this.findUserByUserCode(userCode);
+        if (itripUser != null && itripUser.getUserPassword().equals(userPassword)) {
+            if (itripUser.getActivated() != 1) {
+                throw new Exception("用户未激活");
+            }
+            return itripUser;
+        } else {
+            return null;
+        }
+    }
     @Override
     public boolean activate(String mail, String code) throws Exception {
         //1.验证激活码
@@ -75,6 +88,7 @@ public class UserServiceImpl implements  UserService {
                 user.setActivated(1);//已激活
                 user.setUserType(0);//已注册用户
                 user.setFlatID(user.getId());
+                itripUserMapper.updateItripUser(user);
                 //2.更新用户
                 return true;
             }
