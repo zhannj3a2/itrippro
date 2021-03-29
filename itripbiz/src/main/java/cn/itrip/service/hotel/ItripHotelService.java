@@ -1,13 +1,10 @@
 package cn.itrip.service.hotel;
 import cn.itrip.beans.pojo.ItripHotel;
-import cn.itrip.beans.vo.hotel.HotelVideoDescVO;
-import cn.itrip.beans.vo.hotel.ItripSearchDetailsHotelVO;
-import cn.itrip.beans.vo.hotel.ItripSearchFacilitiesHotelVO;
-import cn.itrip.beans.vo.hotel.ItripSearchPolicyHotelVO;
-import cn.itrip.common.Page;
-
 import java.util.List;
 import java.util.Map;
+
+import cn.itrip.beans.vo.hotel.*;
+import cn.itrip.common.Page;
 
 /**
 * Created by shang-pc on 2015/11/7.
