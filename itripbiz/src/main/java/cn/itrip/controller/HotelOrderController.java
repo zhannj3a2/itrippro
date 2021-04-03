@@ -92,7 +92,7 @@ public class HotelOrderController {
         Dto<Object> dto = null;
         String tokenString = request.getHeader("token");
         logger.debug("token name is from header : " + tokenString);
-        ItripUser currentUser = validationToken.getCurrentUser(tokenString);
+        ItripUser currentUser = validationToken.getCurrentUser(tokenString);//从Redis中取token数据
         if (null != currentUser) {
             if (orderType == null) {
                 return DtoUtil.returnFail("请传递参数：orderType", "100501");
