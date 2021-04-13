@@ -29,23 +29,25 @@
             <artifactId>mail</artifactId>
             <version>1.4.7</version>
         </dependency>
+
         <dependency>
             <groupId>cn.itrip</groupId>
             <artifactId>itrip-jregex</artifactId>
             <version>1.2_01</version>
         </dependency>
+
         <dependency>
             <groupId>cn.itrip.ccprestsms</groupId>
             <artifactId>itrip-ccprestsms</artifactId>
             <version>1.0</version>
         </dependency>
+
         <dependency>
             <groupId>nl.bitwalker</groupId>
             <artifactId>UserAgentUtils</artifactId>
             <version>1.2.4</version>
         </dependency>
     </dependencies>
-
     <build>
         <finalName>itrip-auth</finalName>
         <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->

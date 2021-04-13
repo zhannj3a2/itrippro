@@ -18,7 +18,7 @@ public class TokenServiceImpl implements TokenService {
    private RedisAPI redisAPI;
   public void save(String token,ItripUser user) throws Exception {
       if (token.startsWith("token:PC-")) {
-          redisAPI.set(token, 2 * 60 * 60, JSON.toJSONString(user));
+          redisAPI.set(token, 2 * 60 * 60, JSON.toJSONString(user));//user信息要序列化，转化成json数据
       } else {
             redisAPI.set(token,JSON.toJSONString(user));
       }
@@ -27,7 +27,7 @@ public class TokenServiceImpl implements TokenService {
         StringBuffer str=new StringBuffer();
         str.append("token:");
         UserAgent agent=UserAgent.parseUserAgentString(userAgent);
-        if(agent.getOperatingSystem().isMobileDevice()){
+        if(agent.getOperatingSystem().isMobileDevice()){//判断它是不是移动设备
             str.append("MOBILE-");
         }
         else {
@@ -80,5 +80,4 @@ public class TokenServiceImpl implements TokenService {
           this.save(newToken,itripUser);
         return newToken;
     }
-
 }

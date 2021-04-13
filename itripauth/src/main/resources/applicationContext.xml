@@ -3,8 +3,8 @@
 	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	   xmlns:aop="http://www.springframework.org/schema/aop"
 	   xmlns:p="http://www.springframework.org/schema/p"
-	   xmlns:tx="http://www.springframework.org/schema/tx"
-	   xmlns:context="http://www.springframework.org/schema/context"
+		   xmlns:tx="http://www.springframework.org/schema/tx"
+		   xmlns:context="http://www.springframework.org/schema/context"
 	   xmlns:mvc="http://www.springframework.org/schema/mvc"
 	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
                 http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
@@ -16,6 +16,7 @@
 	<context:component-scan base-package="cn.itrip.auth.service"/>
 	<context:annotation-config />
 	<context:property-placeholder location="classpath:database.properties,classpath:sms.properties"/>
+	<!--获取验证码-->
 	<bean name="systemConfig" class="cn.itrip.common.SystemConfig">
 		<property name="smsAccountSid" value="${sms.accountSid}" />
 		<property name="smsAuthToken" value="${sms.authToken}" />

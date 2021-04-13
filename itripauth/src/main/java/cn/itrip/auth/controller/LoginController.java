@@ -47,6 +47,7 @@ public class LoginController {
 				String userAgent=request.getHeader("user-agent");
 				String  token=tokenService.generateToken(userAgent,user);
 				tokenService.save(token,user);
+				//返回token信息（token，过期时间，创建时间）
 				ItripTokenVO vo=new ItripTokenVO(token,
 						Calendar.getInstance().getTimeInMillis()+2*60*60*1000,
 						Calendar.getInstance().getTimeInMillis());
@@ -58,10 +59,7 @@ public class LoginController {
 			e.printStackTrace();
 			return DtoUtil.returnFail(e.getMessage(), ErrorCode.AUTH_AUTHENTICATION_FAILED);
 		}
-
 	}
-	
-	
 	@RequestMapping(value="/logout",method=RequestMethod.GET,produces="application/json",headers="token")
 	public @ResponseBody Dto logout(HttpServletRequest request)
 	{

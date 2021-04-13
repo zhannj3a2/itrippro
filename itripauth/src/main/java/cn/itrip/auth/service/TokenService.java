@@ -5,7 +5,7 @@ import cn.itrip.beans.pojo.ItripUser;
 public interface TokenService {
 public void save(String token,ItripUser user) throws Exception;//将Token保存在session
 public String generateToken(String userAgent, ItripUser user) throws  Exception;//生成token
-public Boolean validate(String token,String userAgent) throws Exception;
+public Boolean validate(String token,String userAgent) throws Exception;//验证token是否有效
 public void delete(String token)throws Exception;
 public String reloadToken(String agent,String token)throws Exception;//置换token
 }
